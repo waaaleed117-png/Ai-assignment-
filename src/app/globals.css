@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+.dark { color-scheme: dark; }
+* { box-sizing: border-box; }
+html, body { min-height: 100%; overflow-x: hidden; }
+body { margin: 0; background: #e7edf7; color: #172033; font-family: 'Space Grotesk', 'Avenir Next', ui-sans-serif, system-ui, sans-serif; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+img { max-width: 100%; }
+@layer components {
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 via-violet-500 to-fuchsia-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-violet-500/20 transition duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-fuchsia-500/25 disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-secondary { @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300/80 bg-white/75 px-4 py-2.5 text-sm font-semibold text-slate-800 backdrop-blur-xl transition hover:-translate-y-0.5 hover:bg-white dark:border-white/10 dark:bg-slate-900/10 dark:text-slate-200 dark:hover:bg-white/10; }
+  .input-field { @apply w-full rounded-xl border border-slate-300/90 bg-white/85 px-3 py-2.5 text-sm text-slate-900 outline-none backdrop-blur-xl transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-400/20 dark:border-white/10 dark:bg-slate-900/10 dark:text-white; }
+  .glass-surface { @apply border border-slate-200/90 bg-white/75 shadow-xl shadow-slate-900/10 backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/10 dark:shadow-black/10; }
+}
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { scrollbar-width: none; }
+.mesh-bg { background-color: #e7edf7; background-image: radial-gradient(circle at 8% 12%, rgba(59,130,246,.16), transparent 28%), radial-gradient(circle at 88% 8%, rgba(168,85,247,.14), transparent 27%), radial-gradient(circle at 72% 92%, rgba(16,185,129,.12), transparent 30%), linear-gradient(135deg, rgba(255,255,255,.24), transparent 48%); background-size: 140% 140%; animation: liquid-drift 18s ease-in-out infinite alternate; }
+.dark .mesh-bg { background-color: #080d1d; background-image: radial-gradient(circle at 8% 12%, rgba(37,99,235,.3), transparent 30%), radial-gradient(circle at 88% 8%, rgba(147,51,234,.26), transparent 28%), radial-gradient(circle at 72% 92%, rgba(5,150,105,.2), transparent 30%); }
+@keyframes liquid-drift { from { background-position: 0% 0%; } to { background-position: 100% 70%; } }
